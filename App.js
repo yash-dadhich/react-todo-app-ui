@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar"
 import React, { useState } from "react"
 import {
+  Keyboard,
   KeyboardAvoidingView,
   StyleSheet,
   Text,
@@ -16,6 +17,7 @@ export default function App() {
   const [taskItems, setTaskItems] = useState([])
 
   const handleAddTask = () => {
+    Keyboard.dismiss()
     setTaskItems([...taskItems, task])
     setTask(null)
   }
